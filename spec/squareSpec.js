@@ -2,7 +2,7 @@ describe('Square', function(){
   var square;
 
   beforeEach(function(){
-    square = new Square(1);
+    square = new Square(2);
   });
 
   it('should have an initialized value', function(){

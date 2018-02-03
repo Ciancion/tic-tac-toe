@@ -1,3 +1,3 @@
 function Square(value){
-  this.value = 2
+  this.value = value ;
 };
