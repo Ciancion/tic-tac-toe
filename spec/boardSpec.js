@@ -2,7 +2,7 @@ describe('Board', function(){
   var board;
 
   beforeEach(function(){
-    board = new Board(3, 3);
+    board = new Board(3);
   });
 
   it('should create a new borad', function(){
@@ -33,6 +33,11 @@ describe('Board', function(){
  it('should create an array with all winning combinations', function(){
    board.createBoard();
    board.setWinnigCombinations();
+   expect(board.winningCombinations.length).toEqual(8);
+ });
+
+ it('should set the board and winning combination to play', function(){
+   board.setBoardToPlay();
    expect(board.winningCombinations.length).toEqual(8);
  });
 
