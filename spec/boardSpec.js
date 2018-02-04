@@ -30,5 +30,12 @@ describe('Board', function(){
     expect(board.winningDiagonal.length).toEqual(2);
   });
 
+ it('should create an array with all winning combinations', function(){
+   board.createBoard();
+   board.setWinnigCombinations();
+   expect(board.winningCombinations.length).toEqual(8);
+ });
+
+
 
 });

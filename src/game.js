@@ -7,7 +7,6 @@ function Game(board = Board, player= Player){
 };
 
 Game.prototype.play = function(value) {
-
   this.currentPlayer.selectSquare(value);
   this.nextPlayer();
 };
@@ -20,6 +19,7 @@ Game.prototype.nextPlayer = function(){
   };
 };
 
-// Game.prototype.checkWinner = function(){
-//
-// };
+Game.prototype.checkWinner = function(){
+  game.currentPlayer.selectedSquares.includes(game.board.winningRows[i])
+
+};

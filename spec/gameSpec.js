@@ -14,4 +14,15 @@ describe('Game', function(){
     game.play(3);
     expect(game.currentPlayer.type).toEqual('x')
   });
+
+  // it('should check the all the winning squares', function(){
+  //   game.play(2);
+  //   game.play(5);
+  //   game.play(1);
+  //   game.play(6);
+  //   game.play(3);
+  //
+  //   expect(game.on).toBeFalsy();
+  // });
+
 });

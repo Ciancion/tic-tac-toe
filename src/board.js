@@ -1,4 +1,4 @@
-function Board(x, y) {
+function Board(x, y){
   this.numSquares = x * y;
   this.table = [];
   this.winningRows = [];
@@ -6,6 +6,7 @@ function Board(x, y) {
   this.winningDiagonal = []
   this.coordinateX = x;
   this.coordinateY = y;
+  this.winningCombinations = [];
 };
 
 Board.prototype.createBoard = function() {
@@ -44,3 +45,10 @@ Board.prototype.winningCombinationDiagonal = function() {
   };
   this.winningDiagonal.push(SquaresDiagLeft, SquaresDiagRight)
 }
+
+Board.prototype.setWinnigCombinations = function(){
+  this.winningCombinationRows();
+  this.winningCombinationColumns();
+  this.winningCombinationDiagonal();
+  this.winningCombinations = this.winningRows.concat(this.winningColumns, this.winningDiagonal)
+};
