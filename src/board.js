@@ -3,6 +3,7 @@ function Board(x, y){
   this.table = [];
   this.winningRows = [];
   this.winningColumns = [];
+  this.winningDiagonal = []
   this.coordinateX = x;
   this.coordinateY = y;
 };
@@ -13,13 +14,13 @@ Board.prototype.createBoard = function(){
     this.table.push(square);
   };
 
-  Board.prototype.winningCombinationRow = function( ){
+  Board.prototype.winningCombinationRows = function( ){
     for(i = 0; i < this.table.length; i += this.coordinateX){
       this.winningRows.push(this.table.slice(i, i + this.coordinateX));
     };
   };
 
-  Board.prototype.winningCombinationColumn = function(){
+  Board.prototype.winningCombinationColumns = function(){
     var sortedSquares = []
     for(i = 0; i < this.coordinateX; i ++){
       for(j = 0; j< this.coordinateY; j++){
@@ -30,4 +31,19 @@ Board.prototype.createBoard = function(){
       this.winningColumns.push(sortedSquares.slice(z , z + this.coordinateY))
     };
   }
+
+  Board.prototype.winningCombinationDiagonal = function(){
+    const SquaresDiagLeft = []
+    const SquaresDiagRight = []
+    for(i = 0; i < this.coordinateX; i ++){
+        SquaresDiagLeft.push(this.winningRows[i][i])
+    };
+    for(j = 0, z = (this.coordinateY - 1); j < this.coordinateX; j++, z-- ){
+        SquaresDiagRight.push(this.winningRows[j][z])
+      };
+
+    this.winningDiagonal.push(SquaresDiagLeft, SquaresDiagRight)
+    console.log(this.winningDiagonal)
+  }
+
 };

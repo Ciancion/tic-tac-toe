@@ -12,14 +12,23 @@ describe('Board', function(){
 
   it('should create the winning combination for the rows', function(){
     board.createBoard();
-    board.winningCombinationRow();
+    board.winningCombinationRows();
     expect(board.winningRows.length).toEqual(3);
   });
 
   it('should create the winning combination for the columns', function(){
     board.createBoard();
-    board.winningCombinationRow();
-    board.winningCombinationColumn();
+    board.winningCombinationRows();
+    board.winningCombinationColumns();
     expect(board.winningColumns.length).toEqual(3);
   });
+
+  it('should create the winning combination for the diagonal', function(){
+    board.createBoard();
+    board.winningCombinationRows();
+    board.winningCombinationDiagonal();
+    expect(board.winningDiagonal.length).toEqual(2);
+  });
+
+
 });
